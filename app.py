@@ -87,6 +87,9 @@ def helper(dis):
     # Convert workout to a list (or handle if Series)
     wrkout_series = workout[workout['disease'] == dis]['workout']
     wrkout = wrkout_series.tolist()  # Convert Series to list
+
+    # Get specialist for the disease
+    specialist = disease_specialist.get(dis)
     
     return desc, pre, med, die, wrkout, specialist
 
