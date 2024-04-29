@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, jsonify  # Import jsonify
+from flask_cors import CORS
 import numpy as np
 import pandas as pd
 import pickle
@@ -6,6 +7,8 @@ import pickle
 
 # flask app
 app = Flask(__name__)
+# Apply CORS to the Flask app, allowing access from any origin (wide-open CORS)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 # load databasedataset===================================
